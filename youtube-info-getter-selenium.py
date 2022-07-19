@@ -7,8 +7,7 @@ idfile = open("ids.txt","a",encoding="utf-8")
 
 driver = webdriver.Firefox()
 
-#path = input("Oynatma Adresini Giriniz: ")
-driver.get("https://www.youtube.com/watch?v=vwB5ybA1nTo&list=PLnojrglWmasetflw8jDA9JkWSiTUeDtQv")
+driver.get("link") #PUT LINK OF ONE VIDEO INSIDE PLAYLIST NO MATTER WHICH ONE
 time.sleep(2)
 playlistObjects = driver.find_elements_by_xpath('.//*[@id="playlist-items"]')
 
@@ -23,7 +22,7 @@ for each in range(len(playlistObjects)):
     if(len(editor) == 3):
         if(len(editor[0]) == 2):
             editor.insert(0,"00")
-            editor.insert(1,"saat")
+            editor.insert(1,"hour")
         else:
             editor.append(":00")
 
@@ -47,7 +46,7 @@ for each in range(len(playlistObjects)):
     idfile.write(videoID+"\n")
     each += 1
 
-print("Bitti")
+print("Finish")
 tfile.close
 dfile.close
 idfile.close
